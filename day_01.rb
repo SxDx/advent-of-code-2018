@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require 'set'
+
+require "set"
 
 input = DATA.each_line.map(&:to_i).freeze
 

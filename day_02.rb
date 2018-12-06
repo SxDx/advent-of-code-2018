@@ -3,15 +3,16 @@
 input = DATA.each_line.map(&:chomp)
 
 # Part 1
-factor_1, factor_2 = 0, 0
+factor1 = 0
+factor2 = 0
 
 input.each do |line|
   counts = line.each_char.group_by(&:itself).transform_values(&:count).values.uniq
-  factor_1 += 1 if counts.include? 2
-  factor_2 += 1 if counts.include? 3
+  factor1 += 1 if counts.include? 2
+  factor2 += 1 if counts.include? 3
 end
 
-puts factor_1 * factor_2
+puts factor1 * factor2
 
 # Part 2
 input.combination(2) do |a, b|

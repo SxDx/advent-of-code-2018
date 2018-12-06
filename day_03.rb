@@ -19,7 +19,7 @@ end
 puts fabric.sum { |row| row.count { |cell| cell.size > 1 } }
 
 # Part 2
-uniqe_squares = input.select do |id, delta_left, delta_top, width, height|
+uniqe_squares = input.select do |_id, delta_left, delta_top, width, height|
   fabric[delta_left, width].all? do |row|
     row[delta_top, height].all? do |cell|
       cell.size == 1
