@@ -1,3 +1,23 @@
+# frozen_string_literal: true
+require 'set'
+
+input = DATA.each_line.map(&:to_i).freeze
+
+# Part 1
+puts input.sum
+
+# Part 2
+frequency = 0
+seen_frequencies = Set[0]
+
+input.cycle do |change|
+  frequency += change
+  break unless seen_frequencies.add?(frequency)
+end
+
+puts frequency
+
+__END__
 +11
 +16
 +2
